@@ -1,0 +1,24 @@
+require 'rails_helper'
+
+RSpec.describe 'Last.fm Service' do
+  before :each do
+    @service = LastFmService.new
+  end
+
+  describe '#fetch_artist_data' do
+    it 'returns artist data' do
+      VCR.use_cassette('fetch_artist_data') do
+        artist = "The Beatles"
+        search = @service.fetch_artist_data(artist)
+
+        expect(search[:name]).to eq("The Beatles")
+        expect(search[:image]).to eq("https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png") 
+        expect(search[:bio]).to include("Liverpool")
+      end
+    end
+  end
+
+  it '#fetch_album_data' do
+
+  end
+end
