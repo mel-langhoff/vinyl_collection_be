@@ -20,7 +20,7 @@ class LastFmService
       {
         name: album_data[:name],
         artist: album_data[:artist],
-        image: album_data[:image][2]['#text'], # Large size image
+        image: album_data[:image][2][:'#text'], # Large size image
         tracks: album_data[:tracks][:track].map { |track| track[:name] }
       }
     else

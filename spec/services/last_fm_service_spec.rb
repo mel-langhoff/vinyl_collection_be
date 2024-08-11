@@ -18,7 +18,18 @@ RSpec.describe 'Last.fm Service' do
     end
   end
 
-  it '#fetch_album_data' do
+  describe '#fetch_album_data' do
+    it 'returns album data' do
+      VCR.use_cassette('fetch_album_data') do
+        album = "The Chronic"
+        artist = "Dr. Dre"
+        search = @service.fetch_album_data(artist, album)
 
+        expect(search[:name]).to eq("The Chronic")
+        expect(search[:artist]).to eq("Dr. Dre")
+        expect(search[:image]).to eq("https://lastfm.freetls.fastly.net/i/u/174s/6d49060026f44d69cd67a7cffa6e3092.png")
+        expect(search[:tracks]).to include("The Chronic (Intro)")
+      end
+    end
   end
 end
