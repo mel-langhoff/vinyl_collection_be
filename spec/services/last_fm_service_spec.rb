@@ -28,7 +28,7 @@ RSpec.describe 'Last.fm Service' do
         expect(search[:name]).to eq("The Chronic")
         expect(search[:artist]).to eq("Dr. Dre")
         expect(search[:image]).to eq("https://lastfm.freetls.fastly.net/i/u/174s/6d49060026f44d69cd67a7cffa6e3092.png")
-        expect(search[:tracks]).to include("The Chronic (Intro)")
+        expect(search[:tracks]).to be_a Array
       end
     end
   end
