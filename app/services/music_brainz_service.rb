@@ -1,6 +1,6 @@
 class MusicBrainzService
-  def self.fetch_song_data(mbid)
-    get_url("recording/#{mbid}")
+  def self.fetch_song_data(recording_mbid)
+    get_url("recording/#{recording_mbid}")
   end
 
   private 
