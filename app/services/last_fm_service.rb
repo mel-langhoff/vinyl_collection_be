@@ -11,6 +11,7 @@ class LastFmService
     # else
     #   nil
     # end
+    response[:artist] if response[:artist]
   end
 
   def self.fetch_album_data(artist_name, album_name)
@@ -26,6 +27,7 @@ class LastFmService
     # else
     #   nil
     # end
+    response[:album] if response[:album]
   end
 
   private
