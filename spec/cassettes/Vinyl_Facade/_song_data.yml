@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/recording/2fcb5bc5-2a28-4b4e-afe5-22a102ee7384?fmt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - MelLanghoffVinylsAPI/1.0 (hello@mel-langhoff.com)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 05 Sep 2024 17:23:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '157'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '1077'
+      X-Ratelimit-Reset:
+      - '1725557001'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - '"fc267e31cc353dfd5ad6ebe92b4bf86f"'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Runtime:
+      - '0.019538'
+      X-Cache-Status:
+      - MISS
+    body:
+      encoding: UTF-8
+      string: '{"video":false,"id":"2fcb5bc5-2a28-4b4e-afe5-22a102ee7384","title":"Xxplosive","length":215266,"first-release-date":"1999-11-16","disambiguation":"explicit"}'
+  recorded_at: Thu, 05 Sep 2024 17:23:20 GMT
+recorded_with: VCR 6.2.0

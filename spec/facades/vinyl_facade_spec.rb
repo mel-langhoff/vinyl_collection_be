@@ -39,6 +39,10 @@ RSpec.describe 'Vinyl Facade', :vcr do
   end
 
   it "#song_data" do
+    song_data = @vinyl_facade.song_data
 
+    expect(song_data).to be_a Hash
+    expect(song_data[:title]).to eq("Xxplosive")
+    expect(song_data[:artist]).to be_a String
   end
 end

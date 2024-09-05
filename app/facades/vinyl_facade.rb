@@ -43,11 +43,12 @@ class VinylFacade
 
   def format_song_data(song_data)
     {
-      title: data[:title],
-      artist: data[:artist_credit].map { |credit| credit[:name] }.join(', '),
-      album: data[:release][:title],
-      release_date: data[:release][:date],
-      genre: data[:genre] || 'Unknown'
+      title: song_data[:title],
+      artist: (song_data[:artist_credit] || []).map { |credit| credit[:name] }.join(', '),
+      album: song_data.dig(:release, :title) || 'Unknown',
+      release_date: song_data.dig(:release, :date) || 'Unknown',
+      genre: song_data[:genre] || 'Unknown'
     }
   end
+  
 end
