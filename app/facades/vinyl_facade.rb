@@ -8,17 +8,20 @@ class VinylFacade
   end
 
   def artist_data
-
+    response = LastFmService.fetch_artist_data(artist)
+    format_artist_data(response)
   end
 
   def album_data
-
+    response = LastFmService.fetch_album_data(artist, album)
+    format_album_data(response)
   end
 
   def song_data
-
+    response = MusicBrainzService.fetch_song_data(recording_mbid)
+    format_song_data(response)
   end
-  
+
   private
 
   def format_artist_data(artist_data)

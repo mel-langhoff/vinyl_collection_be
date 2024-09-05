@@ -11,6 +11,7 @@ class LastFmService
     # else
     #   nil
     # end
+    # conditional check and is used to ensure that you only proceed if the desired data is present
     response[:artist] if response[:artist]
   end
 
@@ -27,6 +28,8 @@ class LastFmService
     # else
     #   nil
     # end
+
+    # conditional check and is used to ensure that you only proceed if the desired data is present
     response[:album] if response[:album]
   end
 
